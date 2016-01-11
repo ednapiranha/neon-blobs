@@ -14,14 +14,14 @@
     container = document.createElement('div');
     document.body.appendChild(container);
 
-    camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 1, 900);
+    camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 1, 1100);
     scene = new THREE.Scene();
 
     scene.fog = new THREE.FogExp2('#fff', 0.001);
 
     // grids
 
-    var size = 500, step = 35;
+    var size = 500, step = 15;
     var geometry = new THREE.Geometry();
 
     for (var i =- size; i <= size; i += step) {
@@ -70,87 +70,11 @@
 
       scene.add(cube2);
     }
-    /*
-    for (var i = 0; i < 20; i ++) {
-      var cube2 = new THREE.Mesh(geometry, material2);
 
-      cube2.scale.y = 3;
-      cube2.scale.x = 3;
-      cube2.position.x = -800 + (i * 10);
-      cube2.position.y = 1000 + (i * -100);
-      cube2.position.z = 10;
-
-      scene.add(cube2);
-    }
-
-    for (var i = 0; i < 20; i ++) {
-      var cube2 = new THREE.Mesh(geometry, material);
-
-      cube2.scale.y = 3;
-      cube2.scale.x = 3;
-      cube2.position.x = -400 + (i * 10);
-      cube2.position.y = 1000 + (i * -100);
-      cube2.position.z = 10;
-
-      scene.add(cube2);
-    }
-
-    for (var i = 0; i < 20; i ++) {
-      var cube2 = new THREE.Mesh(geometry, material2);
-
-      cube2.scale.y = 3;
-      cube2.scale.x = 3;
-      cube2.position.x = 0 + (i * 10);
-      cube2.position.y = 1000 + (i * -100);
-      cube2.position.z = 10;
-
-      scene.add(cube2);
-    }
-
-    for (var i = 0; i < 20; i ++) {
-      var cube2 = new THREE.Mesh(geometry, material);
-
-      cube2.scale.y = 3;
-      cube2.scale.x = 3;
-      cube2.position.x = 400 + (i * 10);
-      cube2.position.y = 1000 + (i * -100);
-      cube2.position.z = 10;
-
-      scene.add(cube2);
-    }
-
-    for (var i = 0; i < 20; i ++) {
-      var cube2 = new THREE.Mesh(geometry, material2);
-
-      cube2.scale.y = 3;
-      cube2.scale.x = 3;
-      cube2.position.x = 800 + (i * 10);
-      cube2.position.y = 1000 + (i * -100);
-      cube2.position.z = 10;
-
-      scene.add(cube2);
-    }
-
-    for (var i = 0; i < 20; i ++) {
-      var cube2 = new THREE.Mesh(geometry, material);
-
-      cube2.scale.y = 3;
-      cube2.scale.x = 3;
-      cube2.position.x = 1200 + (i * 10);
-      cube2.position.y = 1000 + (i * -100);
-      cube2.position.z = 10;
-
-      scene.add(cube2);
-    }
-    */
     // Lighting
 
     var light = new THREE.AmbientLight('#fff');
     scene.add(light);
-
-    var light3 = new THREE.DirectionalLight('#0f0', 0.8);
-    light3.position.set(400, 0, 100);
-    scene.add(light3);
 
     renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -184,7 +108,7 @@
   function render() {
 
     var timer = Date.now() * 0.0006;
-    camera.position.x = Math.sin(timer) * 100;
+    camera.position.x = Math.sin(timer) * 150;
     camera.position.x = Math.sin(timer) * 100;
     camera.position.z = Math.cos(timer) * 500;
 
