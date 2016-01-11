@@ -37,8 +37,8 @@
     var line = new THREE.LineSegments(geometry, material);
     scene.add(line);
 
-    var geometry = new THREE.OctahedronGeometry(1200, 1);
-    var geometry = new THREE.OctahedronGeometry(1300, 2);
+    var geometry = new THREE.OctahedronGeometry(1000, 1);
+    var geometry = new THREE.OctahedronGeometry(900, 2);
     var material = new THREE.MeshLambertMaterial({
       color: '#005ff1',
       transparent: true,
