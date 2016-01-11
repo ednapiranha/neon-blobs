@@ -21,7 +21,7 @@
   }
 
   var player;
-  var videoArray = ['kJoxQYOux40'];
+  var videoArray = ['Pj_FvYJq5s0'];
 
   //videoArray = shuffle(videoArray);
 
