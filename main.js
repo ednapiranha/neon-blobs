@@ -14,7 +14,7 @@
     container = document.createElement('div');
     document.body.appendChild(container);
 
-    camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 1, 800);
+    camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 1, 900);
     scene = new THREE.Scene();
 
     scene.fog = new THREE.FogExp2('#fff', 0.001);
@@ -37,8 +37,8 @@
     var line = new THREE.LineSegments(geometry, material);
     scene.add(line);
 
-    var geometry = new THREE.OctahedronGeometry(1000, 1);
-    var geometry = new THREE.OctahedronGeometry(900, 2);
+    var geometry = new THREE.OctahedronGeometry(700, 1);
+    var geometry = new THREE.OctahedronGeometry(500, 2);
     var material = new THREE.MeshLambertMaterial({
       color: '#005ff1',
       transparent: true,
@@ -56,7 +56,7 @@
 
       cube2.position.x = Math.sin(i * 2) * Math.floor(Math.random() * 700 - 10) + 10;
       cube2.position.y = Math.tan(i) * Math.floor(Math.random() * 900 - 10) + 10;
-      cube2.position.z = 1400 * Math.cos(i);
+      cube2.position.z = 500 * Math.cos(i);
 
       scene.add(cube2);
     }
@@ -66,7 +66,7 @@
 
       cube2.position.x = Math.cos(i) * Math.floor(Math.random() * 900 - 10) + 100;
       cube2.position.y = Math.tan(i) * Math.floor(Math.random() * 700 - 10) + 10;
-      cube2.position.z = 1600 * Math.cos(i);
+      cube2.position.z = 700 * Math.cos(i);
 
       scene.add(cube2);
     }
@@ -184,9 +184,9 @@
   function render() {
 
     var timer = Date.now() * 0.0006;
-    camera.position.x = Math.cos(timer) * 100;
     camera.position.x = Math.sin(timer) * 100;
-    camera.position.z = Math.cos(timer) * 1200;
+    camera.position.x = Math.sin(timer) * 100;
+    camera.position.z = Math.cos(timer) * 500;
 
     renderer.render(scene, camera);
   }
